@@ -85,73 +85,13 @@ MentalHealthApp/
 └── README.md
 ```
 
-## 🚀 Getting Started
-
 ### Prerequisites
 - Node.js (v14 or higher)
 - npm or yarn
 - MongoDB (local or cloud instance)
 
-### Backend Setup
-
-1. **Install dependencies**
-   ```bash
-   cd backend
-   npm install
-   ```
-
-2. **Configure environment variables**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-3. **Start the backend server**
-   ```bash
-   npm run dev
-   ```
-   Server will run on `http://localhost:5000`
-
-### Frontend Setup
-
-1. **Install dependencies**
-   ```bash
-   cd frontend
-   npm install
-   ```
-
-2. **Start the development server**
-   ```bash
-   npm start
-   ```
-   Application will open on `http://localhost:3000`
-
-## 📋 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
-
-### Chat
-- `POST /api/chat/message` - Send message and get bot response
-- `GET /api/chat/history/:conversationId` - Get conversation history
-
-### Mood Tracking
-- `POST /api/mood/entry` - Save mood entry
-- `GET /api/mood/history/:userId` - Get mood history
-- `GET /api/mood/analytics/:userId` - Get mood analytics
-
-### Analytics
-- `GET /api/analytics/dashboard/:userId` - Get dashboard data
-- `GET /api/analytics/emotions/:userId` - Get emotion trends
-- `GET /api/analytics/strategies/:userId` - Get strategy effectiveness
-
+  
 ## 🧪 Testing the Application
-
-### Test User Credentials
-You can register with any email/password combination, or use:
-- Email: `test@example.com`
-- Password: `password123`
 
 ### Test Crisis Detection
 Try sending messages containing keywords like:
@@ -181,14 +121,6 @@ The system will trigger crisis alerts with emergency resources.
 - Grateful
 - Neutral
 
-## 🌍 Supported Regions & Helplines
-
-- **US**: 1-800-273-8255 (Suicide & Crisis Lifeline)
-- **UK**: 116 123
-- **Canada**: 1-833-456-4566
-- **India**: 9152987821
-- **Australia**: 13 11 14
-
 ## 📱 Features Demo
 
 ### Chat Interface
@@ -208,39 +140,3 @@ The system will trigger crisis alerts with emergency resources.
 - Analyze emotion patterns
 - See which coping strategies work best
 - Track engagement and progress
-
-## 🔧 Future Enhancements
-
-- Integration with OpenAI GPT for advanced NLP
-- Video call counseling integration
-- Push notifications for daily check-ins
-- Community support features
-- Integration with fitness trackers
-- Advanced ML models for prediction
-- Multi-language support expansion
-
-## 📄 License
-
-This project is created for educational and mental health support purposes.
-
-## ⚠️ Important Notice
-
-**This application is NOT a replacement for professional mental health services.**
-
-If you are in crisis or experiencing suicidal thoughts, please:
-1. **Call emergency services** (911 in US)
-2. **Contact the Suicide & Crisis Lifeline**: 988 (US)
-3. **Text HOME to 741741** for Crisis Text Line
-4. **Reach out to a trusted mental health professional**
-
-## 👨‍💻 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Support
-
-For support and questions, please reach out to the development team.
-
----
-
-**Remember: Your mental health matters. You are not alone. 💜**
