@@ -4,10 +4,22 @@ const cors = require('cors');
 
 const app = express();
 
+let db;
 const USE_SUPABASE = process.env.USE_SUPABASE === 'true';
-const { db } = USE_SUPABASE 
-  ? require('./models/db-supabase') 
-  : require('./models/db');
+
+try {
+  if (USE_SUPABASE && process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY) {
+    console.log('Using Supabase database');
+    db = require('./models/db-supabase').db;
+  } else {
+    console.log('Using in-memory database (Supabase credentials missing)');
+    db = require('./models/db').db;
+  }
+} catch (error) {
+  console.error('Database initialization error:', error.message);
+  console.log('Falling back to in-memory database');
+  db = require('./models/db').db;
+}
 
 global.db = db;
 
