@@ -113,6 +113,28 @@ const db = {
         Object.assign(conv, data);
       }
       return conv;
+    },
+    updateMessages: async (id, messages) => {
+      const conv = conversations.get(String(id));
+      if (conv) {
+        conv.messages = messages;
+      }
+      return conv;
+    },
+    updateCrisisAlert: async (id, alert, isCrisis) => {
+      const conv = conversations.get(String(id));
+      if (conv) {
+        conv.crisisAlert = alert;
+        conv.isCrisisSession = isCrisis;
+      }
+      return conv;
+    },
+    updateSuggestedStrategies: async (id, strategies) => {
+      const conv = conversations.get(String(id));
+      if (conv) {
+        conv.suggestedStrategies = strategies;
+      }
+      return conv;
     }
   },
 
