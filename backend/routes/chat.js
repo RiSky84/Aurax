@@ -4,20 +4,16 @@ const { analyzeEmotion, calculateDistressLevel } = require('../utils/emotionAnal
 const { detectCrisis, generateCrisisResponse } = require('../utils/crisisDetector');
 const { getSuggestedStrategies } = require('../utils/copingStrategies');
 
-// Chat endpoint
 router.post('/message', async (req, res) => {
   try {
     const { userId, message, conversationId } = req.body;
 
-    // Analyze user message
     const emotionAnalysis = analyzeEmotion(message);
     const crisisDetection = detectCrisis(message);
     const distressLevel = calculateDistressLevel(emotionAnalysis.primaryEmotion);
 
-    // Get suggested strategies
     const suggestedStrategies = getSuggestedStrategies(emotionAnalysis.primaryEmotion, 2);
 
-    // Get or create conversation
     let conversation;
     if (conversationId) {
       conversation = await global.db.Conversation.findById(conversationId);
@@ -28,7 +24,6 @@ router.post('/message', async (req, res) => {
       });
     }
 
-    // Add user message
     conversation.messages.push({
       role: 'user',
       content: message,
@@ -37,14 +32,12 @@ router.post('/message', async (req, res) => {
       timestamp: new Date().toISOString()
     });
 
-    // Generate empathetic response
     const botResponse = generateBotResponse(
       emotionAnalysis.primaryEmotion,
       crisisDetection.isCrisis,
       distressLevel
     );
 
-    // Add bot message
     conversation.messages.push({
       role: 'assistant',
       content: botResponse,
@@ -82,7 +75,6 @@ router.post('/message', async (req, res) => {
   }
 });
 
-// Get conversation history
 router.get('/history/:conversationId', async (req, res) => {
   try {
     const conversation = await global.db.Conversation.findById(req.params.conversationId);
@@ -96,7 +88,6 @@ router.get('/history/:conversationId', async (req, res) => {
 });
 
 function generateBotResponse(emotion, isCrisis, distressLevel) {
-  // Validation-first responses that acknowledge feelings
   const validationResponses = {
     happy: "I'm really glad you're feeling good right now. That's something worth celebrating.",
     sad: "I hear that you're going through something difficult. That's really valid, and I'm here to listen.",

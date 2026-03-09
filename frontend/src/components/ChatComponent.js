@@ -46,7 +46,7 @@ function ChatComponent({ userId, conversationId = null }) {
         userId,
         inputMessage,
         currentConversationId,
-        'US' // Default region, can be made dynamic
+        'US'
       );
 
       setCurrentConversationId(response.data.conversationId);

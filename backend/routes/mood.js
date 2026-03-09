@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Save mood entry
 router.post('/entry', async (req, res) => {
   try {
     const {
@@ -42,7 +41,6 @@ router.post('/entry', async (req, res) => {
   }
 });
 
-// Get mood history for user
 router.get('/history/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -67,7 +65,6 @@ router.get('/history/:userId', async (req, res) => {
   }
 });
 
-// Get mood analytics
 router.get('/analytics/:userId', async (req, res) => {
   try {
     const { userId } = req.params;

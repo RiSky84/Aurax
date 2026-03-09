@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Get user progress dashboard
 router.get('/dashboard/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -39,7 +38,6 @@ router.get('/dashboard/:userId', async (req, res) => {
   }
 });
 
-// Get emotion trends visualization data
 router.get('/emotions/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -76,7 +74,6 @@ router.get('/emotions/:userId', async (req, res) => {
   }
 });
 
-// Get coping strategies effectiveness
 router.get('/strategies/:userId', async (req, res) => {
   try {
     const { userId } = req.params;

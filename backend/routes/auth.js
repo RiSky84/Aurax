@@ -3,7 +3,6 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-// Helper function to compare passwords
 async function comparePassword(plainPassword, hashedPassword) {
   try {
     return await bcrypt.compare(plainPassword, hashedPassword);
@@ -13,7 +12,6 @@ async function comparePassword(plainPassword, hashedPassword) {
   }
 }
 
-// Helper function to hash password
 async function hashPassword(password) {
   try {
     const salt = await bcrypt.genSalt(10);
@@ -24,7 +22,6 @@ async function hashPassword(password) {
   }
 }
 
-// Register
 router.post('/register', async (req, res) => {
   try {
     const { username, email, password, fullName } = req.body;
@@ -67,7 +64,6 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
