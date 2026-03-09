@@ -77,7 +77,6 @@ const copingStrategies = {
 function getSuggestedStrategies(emotion, count = 2) {
   const strategies = copingStrategies[emotion] || copingStrategies.stress;
   
-  // Shuffle and return top count strategies
   const shuffled = [...strategies].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
 }

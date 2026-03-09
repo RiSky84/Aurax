@@ -104,7 +104,6 @@ router.get('/strategies/:userId', async (req, res) => {
       });
     });
 
-    // Calculate averages
     Object.keys(strategiesEffectiveness).forEach(strategy => {
       const scores = strategiesEffectiveness[strategy].moodScores;
       strategiesEffectiveness[strategy].avgMood = 

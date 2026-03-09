@@ -22,7 +22,6 @@ function Auth({ onAuth }) {
     setLoading(true);
 
     try {
-      // Create anonymous user (no backend authentication needed)
       const user = {
         id: Math.random().toString(36).substr(2, 9),
         nickname: nickname,
@@ -31,7 +30,6 @@ function Auth({ onAuth }) {
         fullName: nickname
       };
 
-      // Store in localStorage
       localStorage.setItem('token', 'anon-token-' + user.id);
       localStorage.setItem('user', JSON.stringify(user));
       

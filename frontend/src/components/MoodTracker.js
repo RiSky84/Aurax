@@ -49,7 +49,6 @@ function MoodTracker({ userId }) {
       });
 
       setSuccess(true);
-      // Reset form
       setMoodScore(3);
       setEmotion({ primary: 'neutral', secondary: [] });
       setNotes('');

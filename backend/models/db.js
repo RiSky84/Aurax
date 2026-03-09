@@ -1,4 +1,3 @@
-// In-memory storage for demo/testing
 const users = new Map();
 const conversations = new Map();
 const moodEntries = new Map();

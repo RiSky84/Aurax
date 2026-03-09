@@ -53,7 +53,6 @@ router.post('/message', async (req, res) => {
 
     conversation.suggestedStrategies = suggestedStrategies;
     
-    // Update conversation with messages
     await global.db.Conversation.updateMessages(conversation.id || conversation._id, conversation.messages);
     await global.db.Conversation.updateSuggestedStrategies(conversation.id || conversation._id, suggestedStrategies);
 
@@ -99,7 +98,6 @@ function generateBotResponse(emotion, isCrisis, distressLevel) {
     grateful: "That gratitude you're feeling is powerful. It's wonderful to see you recognizing the good."
   };
 
-  // CBT-inspired coping suggestions
   const copingSuggestions = {
     happy: "Keep riding this wave. Notice what's making you feel this way.",
     sad: "Try some gentle self-care today—journaling, a walk, or reaching out to someone you trust.",

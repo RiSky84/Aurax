@@ -25,7 +25,6 @@ function Dashboard({ userId }) {
         setEmotionTrends(emotionRes.data.chartData);
         setStrategies(strategiesRes.data.strategies);
 
-        // Transform mood trend for chart
         if (dashboardRes.data.moodTrend) {
           setMoodTrend(dashboardRes.data.moodTrend);
         }

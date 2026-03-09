@@ -51,13 +51,11 @@ function ChatComponent({ userId, conversationId = null }) {
 
       setCurrentConversationId(response.data.conversationId);
       
-      // Add user message
       setMessages(prev => [...prev, {
         role: 'user',
         content: inputMessage
       }]);
 
-      // Add bot response
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: response.data.botResponse

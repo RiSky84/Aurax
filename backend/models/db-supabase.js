@@ -1,4 +1,3 @@
-// Supabase database adapter
 const { createClient } = require('@supabase/supabase-js');
 
 const supabaseUrl = process.env.SUPABASE_URL;
@@ -17,7 +16,6 @@ const db = {
         let queryBuilder = supabase.from('users').select('*');
 
         if (query.$or) {
-          // Handle OR queries (for email or username)
           const conditions = query.$or;
           const { data, error } = await queryBuilder;
           
