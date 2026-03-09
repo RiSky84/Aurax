@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Calm & Safe Color Palette */
+  --primary: #8AA182; /* Sage Green */
+  --primary-light: #a8b5a3;
+  --primary-dark: #6b7e67;
+  --accent: #F2C5A5; /* Muted Peach */
+  --accent-dark: #e8b490;
+  --danger: #D97A6C; /* Warm Terracotta */
+  --danger-light: #e59988;
+  --success: #8AA182;
+  --warning: #F2C5A5;
+  --text: #3A3A3A; /* Deep Charcoal */
+  --text-light: #6b6b6b;
+  --text-lighter: #999999;
+  --border: #e8e3dc;
+  --bg: #FAF9F6; /* Soft Off-White */
+  --card-bg: #ffffff;
+  --shadow-soft: 0 2px 8px rgba(58, 58, 58, 0.08);
+  --shadow-medium: 0 4px 16px rgba(58, 58, 58, 0.12);
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-md: 12px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+button, input, select, textarea {
+  font-family: 'Nunito', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.app-header {
+  background: white;
+  color: var(--text);
+  padding: 1.25rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.username {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+  background: var(--bg);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.app-nav {
+  background: white;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: white;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+}
+
+.nav-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.app-main {
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+.app-footer {
+  background: white;
+  color: var(--text-light);
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .header-content h1 {
+    font-size: 1.3rem;
+  }
+
+  .app-nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+}

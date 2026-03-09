@@ -1,0 +1,262 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg) 0%, #f5f1ed 100%);
+  padding: 1rem;
+}
+
+.auth-box {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  padding: 3rem;
+  max-width: 420px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+.auth-box h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-box h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  background: var(--bg);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.toggle-btn:hover {
+  background: rgba(138, 161, 130, 0.08);
+}
+
+.toggle-btn.active {
+  background: var(--card-bg);
+  color: var(--primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.anonymous-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.anonymous-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.avatar-picker {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+.avatar-btn {
+  aspect-ratio: 1;
+  font-size: 2.5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-btn:hover {
+  border-color: var(--accent);
+  background: rgba(242, 197, 165, 0.1);
+  transform: scale(1.05);
+}
+
+.avatar-btn.selected {
+  border-color: var(--primary);
+  background: rgba(138, 161, 130, 0.1);
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.65rem;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.875rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+.form-group input::placeholder {
+  color: var(--text-lighter);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(242, 197, 165, 0.2);
+  background: var(--card-bg);
+}
+
+.error-message {
+  background: rgba(217, 122, 108, 0.1);
+  color: var(--danger);
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  border-left: 4px solid var(--danger);
+  font-family: 'Nunito', sans-serif;
+}
+
+.success-message {
+  background: rgba(138, 161, 130, 0.1);
+  color: var(--primary);
+  padding: 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  border-left: 4px solid var(--primary);
+}
+
+.submit-btn {
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background: var(--text-lighter);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-info {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.auth-footer p {
+  margin: 0;
+}
+
+.auth-footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.auth-footer a:hover {
+  color: var(--primary-dark);
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  margin: 0 0.25rem;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.link-btn:hover {
+  color: var(--primary-dark);
+}
